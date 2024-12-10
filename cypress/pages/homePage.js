@@ -2,9 +2,9 @@
 
 export class HomePage {
     //Objects
-    btn_signIn = '.login';
-    url_homePage = 'http://www.automationpractice.pl';
-    btn_account = '.account';
+    btn_signIn = '#login';
+    url_homePage = 'https://demoqa.com/books';
+    btn_userInfo = '#userName-value';
 
     //Action
     naviHomePage(){

@@ -10,25 +10,15 @@ describe('Santy Tests', () => {
   
   beforeEach(() => {
     cy.fixture('loginData.json').as('loginData')
-    cy.fixture('crateUsers').as('newUser')
   })
 
   it('login Test', () => {
     homePage.naviHomePage()
     homePage.naviLoginPage()
     cy.get('@loginData').then((user) => {
-      loginPage.loginAction(user.email, user.password )
-      cy.get(homePage.btn_account).should('contain', user.name)
+      loginPage.loginAction(user.username, user.password )
+      cy.get(homePage.btn_userInfo).should('contain', user.username)
     })
-  })
-
-  it('Create Aconte Test', () => {
-    homePage.naviHomePage()
-    homePage.naviLoginPage()
-    cy.get('@loginData').then((user) => {
-      loginPage.createAcont(user.email )
-    })
-  })
-  
+  }) 
 
 })
